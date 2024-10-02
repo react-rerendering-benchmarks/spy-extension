@@ -1,3 +1,4 @@
+import { memo } from "react";
 import React from "react";
 import ClipboardLog from "./ClipboardLog";
 import Controls from "./Controls";
@@ -9,10 +10,8 @@ import Log from "./Log";
 import NavigationLog from "./NavigationLog";
 import RequestBodyLog from "./RequestBodyLog";
 import ScreenshotLog from "./Screenshots";
-
-export default function OptionsApp() {
-  return (
-    <div className="grid grid-cols-12">
+export default memo(function OptionsApp() {
+  return <div className="grid grid-cols-12">
       <div className="col-span-2">
         <Controls></Controls>
       </div>
@@ -30,6 +29,5 @@ export default function OptionsApp() {
       <div className="p-8 col-span-4">
         <Log></Log>
       </div>
-    </div>
-  );
-}
+    </div>;
+});
